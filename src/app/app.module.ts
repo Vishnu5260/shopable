@@ -14,10 +14,16 @@ import { ProductApiService } from './service/InBuild_Web_Api/apiservice.service'
 import { MessService } from './service/Product_Add_Messanger/mess.service';
 import { ServiceService } from './service/service.service';
 import { DisplayModule } from './Display/display.module';
+import { HeaderComponent } from './header/header.component';
+import { FormsModule } from '@angular/forms';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,HeaderComponent, LandingPageComponent, 
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,7 @@ import { DisplayModule } from './Display/display.module';
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
-    DisplayModule,
+    DisplayModule,FormsModule,MatSelectModule,MatButtonModule,RouterModule,
   HttpClientInMemoryWebApiModule.forRoot(ProductApiService),HttpClientModule
 
   ],

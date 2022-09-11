@@ -15,10 +15,11 @@ import { ProductApiService } from '../service/InBuild_Web_Api/apiservice.service
 import { MessService } from '../service/Product_Add_Messanger/mess.service';
 import { ServiceService } from '../service/service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from '../footer/footer.component';
 
 
 @NgModule({
-  declarations: [Displaydata,ProductitemComponent],
+  declarations: [Displaydata,ProductitemComponent,FooterComponent],
   imports: [
     CommonModule,BrowserAnimationsModule,RouterModule,
     MatInputModule,MatButtonModule,MatFormFieldModule,MatSelectModule,ReactiveFormsModule,
