@@ -14,11 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './Signup Details/create-signup';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent
+    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent, PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

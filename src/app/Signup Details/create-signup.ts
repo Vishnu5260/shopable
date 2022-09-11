@@ -12,7 +12,7 @@ import {ErrorStateMatcher} from '@angular/material/core';
 export class SignupComponent implements OnInit{
 
    SignupForm!:FormGroup 
-   hide=true;
+   hide=true; 
 
     //  ngOnInit(): void {
 //         this.personForm = new FormGroup({  // use instance of the form group to fill the fprm control 
