@@ -12,6 +12,9 @@ import { LoginComponent } from './Login Details/login-component';
 import { LoginServiceComponent } from './Services/login-service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './Signup Details/create-signup';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,9 @@ import { SignupComponent } from './Signup Details/create-signup';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatInputModule ,
+    MatSelectModule
   ],
   providers: [LoginServiceComponent],
   bootstrap: [AppComponent]
