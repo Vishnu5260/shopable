@@ -16,16 +16,8 @@ import { MessService } from './service/Product_Add_Messanger/mess.service';
 import { ServiceService } from './service/service.service';
 import { DisplayModule } from './Display/display.module';
 import { HeaderComponent } from './header/header.component';
-import { FormsModule } from '@angular/forms';
 import { LandingPageComponent } from './landing-page/landing-page.component';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
 import { RouterModule } from '@angular/router';
-
-@NgModule({
-  declarations: [
-    AppComponent,HeaderComponent, LandingPageComponent, 
-=======
 import { DashBoardComponent } from './Dashboard/dashboard-component';
 import { LoginComponent } from './Login Details/login-component';
 import { LoginServiceComponent } from './Services/login-service';
@@ -36,9 +28,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
+
+
 @NgModule({
   declarations: [
-    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent, PageNotFoundComponent
+    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent, PageNotFoundComponent,HeaderComponent, LandingPageComponent, 
   ],
   imports: [
     BrowserModule,
@@ -46,18 +40,13 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AdminModule,CartItemModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatFormFieldModule,
+    MatFormFieldModule,ReactiveFormsModule,
     DisplayModule,FormsModule,MatSelectModule,MatButtonModule,RouterModule,
   HttpClientInMemoryWebApiModule.forRoot(ProductApiService),HttpClientModule
 
   ],
-  providers: [ServiceService,MessService],
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule ,
-    MatSelectModule
-  ],
-  providers: [LoginServiceComponent],
+  providers: [ServiceService,MessService,LoginServiceComponent],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
