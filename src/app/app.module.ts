@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { CartItemModule } from './cart/cart-item.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -24,6 +25,20 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,HeaderComponent, LandingPageComponent, 
+=======
+import { DashBoardComponent } from './Dashboard/dashboard-component';
+import { LoginComponent } from './Login Details/login-component';
+import { LoginServiceComponent } from './Services/login-service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './Signup Details/create-signup';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
+@NgModule({
+  declarations: [
+    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent, PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +52,12 @@ import { RouterModule } from '@angular/router';
 
   ],
   providers: [ServiceService,MessService],
+    FormsModule,
+    ReactiveFormsModule,
+    MatInputModule ,
+    MatSelectModule
+  ],
+  providers: [LoginServiceComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
