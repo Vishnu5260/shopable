@@ -1,7 +1,7 @@
    <!-- <mat-card style="margin-top:60px ; margin-bottom: 60px;box-shadow: 0 3px 10px rgb(0 0 0 / 0.9);">  -->
    <form [formGroup]="SignupForm" (ngSubmit)="Register()">
         <section class="vh-100 bg-image"
-            style="background-image: url('https://img.freepik.com/free-vector/blue-curve-frame-template_53876-99024.jpg?w=2000');">
+            style="background-image: url('');">
             <div class="mask d-flex align-items-center h-100 gradient-custom-3"> -->
               <div class="container h-100">
               <div class="row d-flex justify-content-center align-items-center h-100">
@@ -9,18 +9,21 @@
                   <div class="card" style="border-radius: 15px;">
              
               <div class="card-body p-5">
+
+                <img id="profile-img"
+                src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+                class="profile-img-card"
+              />
+         
               <h2 class="text-uppercase text-center" >Signup</h2>
             <div class="col-md-1"></div>
             <div class="col-md-10"> 
             </div>  
-            <!-- <div class="col-md-4">
-              <img style="height:100% ; width:100%"
-                  src="https://img.freepik.com/free-vector/people-holding-connected-copy-space-circle-icons_53876-66230.jpg?w=900&t=st=1662740005~exp=1662740605~hmac=fbe35305a34c97d2b26774ccd5813b273b18cddde1fd6a3bc9f0d848f7f10877">
-              </div> -->
+           
        
           <div class="row">
           <div class="col-md-1"></div>
-          <div class="col-md-3">
+          <div class="col-md-5">
           <mat-form-field class="example-form-field" appearance="fill">
           <mat-label>First Name</mat-label>
               <input  matInput type="text" formControlName="Fname">
@@ -36,7 +39,7 @@
              <div class="row">
           <div class="col-md-1"></div>
       
-        <div class="col-md-3">
+        <div class="col-md-5">
           <mat-form-field class="example-form-field" appearance="fill">
               <mat-label>Last Name</mat-label>
               <input  matInput type="text" formControlName="Lname">
@@ -51,7 +54,7 @@
       
          <div class="row">
         <div class="col-md-1"></div>
-        <div class="col-md-3">
+        <div class="col-md-5">
           <mat-form-field class="example-form-field" appearance="fill">
               <mat-label>Email</mat-label>
               <input  matInput type="text" formControlName="Email">
@@ -64,7 +67,7 @@
         
           <div class="row">
           <div class="col-md-1"></div>
-         <div class="col-md-3">
+         <div class="col-md-5">
           <mat-form-field class="example-form-field" appearance="fill">
               <mat-label>New Password</mat-label>
               <input  matInput type="password" formControlName="CreatePassword" >
@@ -78,7 +81,7 @@
       
               <div class="row">
                 <div class="col-md-1"></div>
-                <div class="col-md-3">
+                <div class="col-md-5">
           <mat-form-field class="example-form-field" appearance="fill">
               <mat-label>Confirm Password</mat-label>
               <input  matInput type="password" formControlName="ConfirmPassword">
@@ -88,11 +91,18 @@
               </mat-form-field>
               </div>
               </div>
-      
+              <div class="main">
+              <a href="#" [routerLink]="['/login']">Already have a user?Login</a>
+            </div>
       <div class="row">
       <div class="col-md-2"></div>
+
         <div class="col-md-3">
               <button mat-raised-button [routerLink]="['/home']"class="btn btn-primary">Register</button>
+        <div class="col-md-5">
+
+              
+              <button mat-raised-button class="btn btn-primary">Signup</button>
           
               <!-- <div class="col-md-3">
                 <button mat-raised-button class="btn btn-primary" [routerLink]="['/login']">Back</button>
