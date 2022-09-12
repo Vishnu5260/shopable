@@ -9,7 +9,7 @@ mat-form-field{
    width:10%;
 }
 button{
-   margin-left: 65px;
+   margin-left: 130px;
    margin-top: 10px; 
  }
  .example-full-width {
@@ -18,6 +18,10 @@ button{
  .hello{
    margin-left: 100px; 
    margin: "center";
+ }
+ .Linklogin{
+  text-align: center;
+  margin-left: 50px;
  }
 
 

@@ -6,8 +6,12 @@ import { SignupComponent } from './Signup Details/create-signup';
 
 const routes: Routes = [
   {path:'signup',component:SignupComponent},
+ 
+  {path:'logout',component:LoginComponent},
+  {path:'login',component:LoginComponent},
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'**',component:PageNotFoundComponent}
+  
 ];
 
 @NgModule({

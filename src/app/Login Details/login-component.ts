@@ -34,5 +34,9 @@ LoginForm(form:NgForm){
  onclicksignup(){
       this.issignup=!this.issignup;
  }
+
+ click(){
+  alert('hello');
+ }
     }
     
