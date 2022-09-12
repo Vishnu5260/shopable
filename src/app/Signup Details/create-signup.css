@@ -1,6 +1,6 @@
 mat-form-field{
     margin-top: 10px; 
-   margin-left: 100px; 
+   margin-left: 15px; 
     width:200%; 
    margin-right:10px; 
 
@@ -9,22 +9,34 @@ mat-form-field{
    width:10%;
 }
 button{
-   margin-left: 130px;
+   margin-left: 100px;
    margin-top: 10px; 
  }
  .example-full-width {
    width: 100%;
  }
  .hello{
-   margin-left: 100px; 
+   margin-left: 120px; 
    margin: "center";
  }
  .Linklogin{
   text-align: center;
   margin-left: 50px;
  }
+ .main{
+  text-align: center;
+   
+ }
 
-
+ .profile-img-card {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 10px;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
 
 
 
