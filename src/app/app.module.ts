@@ -32,7 +32,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 @NgModule({
   declarations: [
-    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent, PageNotFoundComponent,HeaderComponent, LandingPageComponent, 
+    AppComponent ,DashBoardComponent,LoginComponent,SignupComponent, PageNotFoundComponent, LandingPageComponent, 
   ],
   imports: [
     BrowserModule,

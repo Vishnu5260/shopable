@@ -21,3 +21,10 @@ sidebar__hr {
   .logout:hover {
     background: rgba(255, 0, 0, 0.829);
   }
+  .row1{
+   
+    width:100%
+}
+.col-4{
+    margin-top: 40px;
+}

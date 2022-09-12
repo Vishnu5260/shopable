@@ -8,14 +8,14 @@
             <div class="col-6"><p><strong>Price:</strong> {{proitem.price|currency:'INR'}}</p></div>
         </div>
         <p class="text-center"><strong>Description:</strong> {{proitem.des}}</p>
-        <hr>
+        <hr >
         <!-- <button (click)="add()">wishlist</button> -->
         <div class="d-flex">
             <div class="row btngrp">
                 <!-- <p *ngIf="padded" class="bg-info">added to cart</p> -->
                 <div class="col-6"><button id='cart'class="btn btn-primary " (click)="handleaddtocart()"> Add to cart</button></div>
 
-                <div class="col-6 "><button id="view" class="btn btn-primary   "> View </button></div>
+                <div class="col-6 bg-info "><button id="view" class="btn btn-primary   "> View </button></div>
                 
                 
       </div>

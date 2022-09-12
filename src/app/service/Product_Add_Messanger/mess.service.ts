@@ -6,7 +6,7 @@ import { Product } from 'src/app/Models/product';
   providedIn: 'root'
 })
 export class MessService {
-subject$=new Subject<Product>()
+subject$=new Subject<any>()
 public cartitems:any=[]
 public wishitems:any=[]
 public cartTotal=0;

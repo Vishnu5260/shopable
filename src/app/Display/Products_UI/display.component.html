@@ -1,7 +1,9 @@
 
-<!-- <app-header></app-header> -->
+<app-header></app-header>
 <div class="card-top container-fluid">
+    <div class="row container-fluid"><img width="100%" height="400px"src='https://houndshillshoppingcentre.co.uk/wp-content/uploads/2017/03/FashionBlogImage.jpg'></div>
   <div class="container d-flex">
+    
       <div class="item">
           <a >
               <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
@@ -33,19 +35,19 @@
       <div class="row">
         <div class="col-2">
             <div class="  container">
-                <div *ngIf='filter' style="margin-top:70px">
+                <div  style="margin-top:70px">
                     <form [formGroup]="filtersform" (ngSubmit)="onSubmit()">
                       <div >
                         <h1 class=" btn btn-primary bt-sm active">Price filter</h1>
             
                         <mat-form-field appearance="fill">
                           <mat-label>From</mat-label>
-                          <input matInput type="number" placeholder='Min'formControlName="from" min="0">
+                          <input matInput type="number" placeholder='Min'formControlName="from" min="0" required>
                         </mat-form-field>
             
                         <mat-form-field appearance="fill">
                           <mat-label>to</mat-label>
-                          <input matInput type="number" placeholder='Max'formControlName="to" min="0" max="100000">
+                          <input matInput type="number" placeholder='Max'formControlName="to" min="0" max="100000" required>
                         </mat-form-field>
             
                         <button type="submit"class="h-100 d-flex text-align-center justify-content-*-center btn btn-primary">Go</button>
@@ -60,7 +62,7 @@
             <div class="row container " >
             <h1 class=" text-center justify-content-*-center">{{src}}</h1><hr>
             <ng-container  *ngFor="let item of this.Products">
-                <div class="col-3">
+                <div class="col-4">
                 <div *ngIf=" this.srcProd===item.name  || this.srcProd==='' ">
             
                     

@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
   public totalItem : number = 0;
   public searchTerm !: string;
   constructor(private  _msgser : MessService,private _productsService:ServiceService) { }
-
+  product:any=[]
   ngOnInit(): void {
      this._msgser.cartitems.forEach((item:any)=>{
     this.totalItem +=item.qty
@@ -23,18 +23,19 @@ export class HeaderComponent implements OnInit {
    
   }
   submit(searchform:NgForm){
-
-    console.log(searchform.form.controls['search'].value)
-  if(this._productsService.getProducts().subscribe((data:Product[])=>{data.find((x=>x.name===searchform.form.controls['search'].value))}))
-  {  
-    this._msgser.serach(this._productsService.getProducts().subscribe((data:Product[])=>{
-      data.find((x=>x.name===searchform.form.controls['search'].value)
-      )}));
-    }
-      else{
-        alert('not founf')
-      }
-}}
+    let serachvalue:string=''
+      serachvalue=searchform.form.controls['search'].value
+    console.log(serachvalue);
+      if(this._productsService.getProducts().subscribe((data:Product[])=>{data.find((x=>x.name===serachvalue))}))
+      {  
+          this._productsService.getProducts().subscribe((data:Product[])=>{
+            this.product.push(data.find((x=>x.name===serachvalue)))})
+            console.log(this.product)
+            this._msgser.subject$.next(this.product)
+    
+        }
+         this.product.splice(0,this.product.length)
+    }}
 
 
     // this._productsService.getProducts().subscribe((data:any)=>{

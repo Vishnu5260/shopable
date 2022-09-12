@@ -16,10 +16,11 @@ import { MessService } from '../service/Product_Add_Messanger/mess.service';
 import { ServiceService } from '../service/service.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from '../footer/footer.component';
+import { HeaderComponent } from '../header/header.component';
 
 
 @NgModule({
-  declarations: [Displaydata,ProductitemComponent,FooterComponent],
+  declarations: [Displaydata,ProductitemComponent,FooterComponent,HeaderComponent],
   imports: [
     CommonModule,BrowserAnimationsModule,RouterModule,
     MatInputModule,MatButtonModule,MatFormFieldModule,MatSelectModule,ReactiveFormsModule,

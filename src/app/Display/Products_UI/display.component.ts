@@ -31,12 +31,15 @@ this._service.getProducts().subscribe((data:any)=>{
 });
 // console.log(this.msg.wishitems)
 
-this.msg.subject$.subscribe((data:Product)=>{
-  console.log(this.srcProd=data.name)
-});
-this.msg.getMsg().subscribe((data:Product)=>{
-  console.log(this.srcProd=data.name)
-});
+this.msg.subject$.subscribe((data:Product[])=>{
+  this.Products=data
+  this.Products.forEach(e=>{
+    this.srcProd=e.name
+
+  })
+  this.srcProd=''
+  console.log(data)
+})
 
 
 this.filtersform=this._fb.group({
@@ -54,6 +57,7 @@ categorySelection1(cat:string){
     this.src=cat
     this._service.getProducts().subscribe((data:Product[])=>{
     this.Products=data});
+
    
   }
   
