@@ -12,6 +12,7 @@ constructor(private _msgser:MessService){}
 ngOnInit(){
    console.log( this.cart=this._msgser.cartitems)
    this.price=this._msgser.getTotal();
+   console.log(this.price)
    console.log(this._msgser.wishitems);
 }
 

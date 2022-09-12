@@ -68,8 +68,9 @@ add(product:Product){
       let gtotal=0;
       this.cartitems.forEach((item:Product) =>{
       gtotal+=((item.qty) *item.price)
+      return gtotal;
     });
-    return gtotal;  
+    return gtotal;
     }
 
     getMsg():Observable<any>{
