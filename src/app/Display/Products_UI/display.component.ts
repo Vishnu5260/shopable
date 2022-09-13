@@ -13,12 +13,13 @@ import { ServiceService } from "../../service/service.service";
 })
 export class Displaydata{
 
-  src:string='All products'
+  src:string='All products';
+  update:string=''
 subject$=new Subject();
 Products:any[]=[];
 product:any=[]
-srcProd:string=''
-filter:boolean=true
+srcProd:string='';
+clickvalue=''
 
     constructor(private _http:HttpClient,private _fb:FormBuilder,
       private _service:ServiceService,private msg:MessService){}
@@ -29,7 +30,7 @@ ngOnInit(){
 this._service.getProducts().subscribe((data:any)=>{
   this.Products=data;
 });
-// console.log(this.msg.wishitems)
+
 
 this.msg.subject$.subscribe((data:Product[])=>{
   this.Products=data
@@ -51,32 +52,72 @@ send(data:Product){
   this._service.s$.next(data);
 }
 categorySelection1(cat:string){
+  this.src=cat
+  if(this.filtersform.invalid)
+  {this.clickvalue=cat
+    if(cat==='All Products')
+    {
+      this._service.getProducts().subscribe((data:Product[])=>{
+        this.Products=data
+      });
+     console.log('true   all')
+    
+    }
+    else if(cat!='All Products')
+{  this.src=cat
+   this._service.getProducts().subscribe((data:Product[])=>{
+         this.Products=data.filter(x=>x.category==cat)
+         });
+         console.log(' category')
   
-  if(cat=='All Products')
-  { this.filter=!this.filter
-    this.src=cat
-    this._service.getProducts().subscribe((data:Product[])=>{
-    this.Products=data});
+}
+  }           
 
-   
-  }
-  
-   else
+  else 
+  { this.update=cat
+    console.log('false else')
+  this.filtersform.reset()
+  if(this.update==='All Products')
   {
-    this.filter=false
-    console.log(cat)
-    this.src=cat;
     this._service.getProducts().subscribe((data:Product[])=>{
-      this.Products=data.filter(x=>x.category==cat)
-    })
+      this.Products=data
+    });
+   console.log('else  all')
+  
   }
-}
-onSubmit(){
-  console.log(this.filtersform.value);
-console.log(this._service.getProducts().subscribe((data:Product[])=>{
-this.Products=data.filter(x=>x.price >= this.filtersform.controls['from'].value && x.price <= this.filtersform.controls['to'].value)}))
+  else if(cat!='All Products')
+{  this.src=cat
+ this._service.getProducts().subscribe((data:Product[])=>{
+       this.Products=data.filter(x=>x.category==cat)
+       });
+       console.log(' else category')
 
 }
+  
+  }
+}    
+
+onSubmit(){
+  this.update=this.clickvalue
+  if(this.update==='All Products')
+  {
+    this._service.getProducts().subscribe((data:Product[])=>{
+       this.Products=data.filter(x=>x.price >= this.filtersform.controls['from'].value && x.price <= this.filtersform.controls['to'].value)})
+      // this.Products=data.filter(x=>x.price >= this.from && x.price <= this.to)})  
+      console.log(this.Products)
+  
+  }
+  else
+  {
+    this._service.getProducts().subscribe((data:Product[])=>{
+      this.Products=data.filter(   x=>x.price >= this.filtersform.controls['from'].value && x.price <= this.filtersform.controls['to'].value &&x.category==this.update) })
+        console.log(this.Products)
+        
+        
+  }
+  
+  // 
+  }
 
 }
 

@@ -5,21 +5,22 @@
             <i style="font-size: 40px;" class="fas fa-shipping-fast">&nbsp;
                 
             </i>
-            <strong style="font-size: 30px;margin-top: 12px;">Shoapable</strong>
+            <strong style="font-size: 30px;margin-top: 12px;">Buy It</strong>
 
           <form #searchform="ngForm" (ngSubmit)="submit(searchform)">
             <div class="form-group" style="margin-left: 250px;width:150%">
-                <input type="text" name='search' class="form-control"   [(ngModel)]="searchTerm"  placeholder="search products" ngModel>
+                <input type="text" name='search' class="form-control text-left"   [(ngModel)]="searchTerm"  placeholder="search products" ngModel>
             </div>
             <!-- <button type="submit">search</button> -->
           </form>
-            <span class="fas fa-search search-icon"></span>
-            <i style="font-size: 20px;margin-left:400px;margin-top: 5px;background-color:dodgerblue;border-radius: 14px;" class="fas fa-cart-plus p-3"[routerLink]="['/login']">Login/SignUp</i>
-
-        </div>
-        <button routerLink="cart" class="btn btn-primary">
-            <i style="font-size: 25px;margin-top: 13px;" class="fas fa-cart-plus"[routerLink]="['/cart']">Cart</i>
+          <button routerLink="cart" class="btn btn-primary btn-sm">
+            <i style="font-size: 25px;margin-top: 13px;margin-left:350px;" class="fas fa-cart-plus"[routerLink]="['/cart']">Cart</i>
             <!-- <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div> -->
         </button>
+        </div>
+        
+        <span class="fas fa-search search-icon"></span>
+        <i style="font-size: 25px;margin-top: 5px;background-color:dodgerblue;border-radius: 14px;" class="fas fa-cart-plus p-3"[routerLink]="['/login']">Login/SignUp</i>
+
     </div>
 </header>

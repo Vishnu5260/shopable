@@ -23,7 +23,8 @@ sidebar__hr {
   }
   .row1{
    
-    width:100%
+    width:100%;
+    margin-top: 100px;
 }
 .col-4{
     margin-top: 40px;
